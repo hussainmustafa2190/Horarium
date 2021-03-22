@@ -1,0 +1,49 @@
+
+<html>
+    <head> 
+        <!-------------------Important Links!------------------>         
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet"> 
+        <title>Horarium</title>         
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminlogin.css') }}">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>         
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>         
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminlogin.css') }}">
+    </head>     
+    <body class="accblock picname"> 
+        <!-------------------Logo and Greetings------------------>         
+        <div class="loginarea"> 
+            <h1 class="title2">Horarium</h1> 
+            <form class="accform" action="/adminlogin" method="post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Admin ID</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your information with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                </div>
+
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Remember Me!</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <!-- <strong>Title</strong> --> {{ message }}
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+            </form>
+        </div>
+    </body>
+</html>

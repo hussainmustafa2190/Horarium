@@ -1,0 +1,40 @@
+#FLASK MAILER CODE
+
+
+
+from flask import Flask,render_template
+import smtplib
+from flask_mail import Mail,Message
+
+
+
+app = Flask(__name__)
+app.config.update(
+    DEBUG=True,
+    MAIL_SERVER='smtp.gmail.com' ,
+    MAIL_PORT=465,
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME = 'admin@gmail.com',
+    MAIL_PASSWORD = 'password'
+    )
+mail = Mail(app)
+
+@app.route('/')
+def send_mail():
+    try:
+        msg = Message("Please Report!!!!",
+                      sender="admin@gmail.com",
+                      recipients=["tutor@gmail.com"])
+        msg.body = "Please visit the webpage 'Horrarium' for reallocation"
+        mail.send(msg)
+        return 'mail'
+
+
+
+    except Exception as e:
+                        return str(e)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+8.txt
+Displaying 8.txt.

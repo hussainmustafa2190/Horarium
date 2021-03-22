@@ -1,0 +1,303 @@
+#REALLOCATION ALGORITHM
+
+class Teacher():
+    def __init__(self, thours, tname, subject):
+        self.tname = tname
+        self.thours = thours
+        self.tpriority = thours
+        self.subject = subject
+        self.lectureslots = [[0, 0, 0, 0, 0, 0, 0, 0],
+                             [0, 0, 0, 0, 0, 0, 0, 0],
+                             [0, 0, 0, 0, 0, 0, 0, 0],
+                             [0, 0, 0, 0, 0, 0, 0, 0],
+                             [0, 0, 0, 0, 0, 0, 0, 0],]
+
+    def notify_unavailability(self, week_day, timeslot):
+
+        if self.lectureslots[week_day-1][timeslot-1] == 1:
+            days_slots[week_day-1].slots[timeslot-1] = self.subject + 'No teacher available'
+            self.lectureslots[week_day-1][timeslot-1] = 0
+            return ""
+        else:
+            return "You haven't been scheduled any lectures in this time slot"
+
+    def allocate_me(self, week_day, timeslot):
+        if days_slots[week_day-1].slots[timeslot-1] == self.subject and self.lectureslots[week_day-1][timeslot-1] == 0:
+            days_slots[week_day-1].slots[timeslot-1] = self.tname, self.subject
+
+
+class Subject:
+    def __init__(self, name, loc, lhs, teacher):
+        self.name = name
+        self.loc = loc
+        self.lhs = lhs
+        self.priority = lhs
+        self.teacher = teacher
+
+    def __str__(self):
+        return self.name + ":" + self.priority
+
+
+
+
+teacher1 = Teacher(11, 't1', 's1')
+teacher2 = Teacher(15, 't2', 's2')
+teacher3 = Teacher(7, 't3', 's3')
+teacher4 = Teacher(6, 't4', 's4')
+teacher5 = Teacher(8, 't5', 's5')
+teacher6 = Teacher(9, 't6', 's6')
+teacher7 = Teacher(12, 't7', 's7')
+teacher8 = Teacher(10, 't8', 's8')
+teacher9 = Teacher(11, 't9', 's9')
+teacher10 = Teacher(13, 't10', 's10')
+teacher11 = Teacher(10, 't11', 's11')
+teacher12 = Teacher(14, 't12', 's12')
+teacher13 = Teacher(16, 't13', 's1')
+teacher14 = Teacher(10, 't14', 's2')
+teacher15 = Teacher(15, 't15', 's3')
+
+
+subject1= Subject('s1', 'a1', 4, teacher1)
+subject2= Subject('s2', 'a2', 4, teacher2)
+subject3= Subject('s3', 'a3', 4, teacher3)
+subject4= Subject('s4', 'a4', 4, teacher4)
+subject5= Subject('s5', 'a5', 4, teacher5)
+subject6= Subject('s6', 'a6', 4, teacher6)
+subject7= Subject('s7', 'a7', 3, teacher7)
+subject8= Subject('s8', 'a8', 1, teacher8)
+subject9= Subject('s9', 'a9', 2, teacher9)
+subject10= Subject('s10', 'a10', 4, teacher10)
+subject11= Subject('s11', 'a11', 2, teacher11)
+subject12= Subject('s12', 'a12', 1, teacher12)
+
+mylist = [subject1, subject2, subject3, subject4, subject5, subject6, subject7, subject8,subject9,subject10,subject11,subject12]
+mylist2 = [teacher1, teacher2, teacher3, teacher4, teacher5, teacher6, teacher7, teacher8,teacher9,teacher10,teacher11,teacher12, teacher13, teacher14, teacher15]
+
+
+mylist = list(sorted(mylist, key=take2, reverse=False))
+
+class Day:
+    def __init__(self):
+        self.t1= None
+        self.t2= None
+        self.t3= None
+        self.t4= None
+        self.t5= None
+        self.t6= None
+        self.t7= None
+        self.slots = [self.t1, self.t2, self.t3, self.t4, self.t5, self.t6, self.t7]
+
+    def __str__(self):
+        for slot in self.slots:
+            print(slot)
+        return ''
+
+
+monday= Day()
+tuesday = Day()
+wednesday= Day()
+thursday= Day()
+friday = Day()
+saturday = Day()
+
+
+#MONDAY
+#subject logic
+
+
+for i in range(7):
+    for element in mylist:
+        if element.priority == 0:
+            mylist.remove(element)
+    monday.slots[i] = mylist[i%len(mylist)].name, mylist[i%len(mylist)].teacher.tname, mylist[i%len(mylist)].loc
+    mylist[i%len(mylist)].teacher.lectureslots[0][i] = 1
+
+    #print(monday.slots[i])
+    mylist[i%len(mylist)].priority= mylist[i%len(mylist)].priority - 1
+    mylist[i%len(mylist)].teacher.tpriority = mylist[i%len(mylist)].teacher.tpriority - 1
+
+
+timeslot = ['9-10', '10-11', '11-12', '12-13', '14-15', '15-16', '16-17']
+
+
+
+
+
+
+
+#TUESDAY
+
+#print(mylist)
+for i in range(7):
+    for element in mylist:
+        if element.priority == 0:
+            mylist.remove(element)
+    tuesday.slots[i] = mylist[i%len(mylist)].name, mylist[i%len(mylist)].teacher.tname, mylist[i%len(mylist)].loc
+    mylist[i%len(mylist)].teacher.lectureslots[2][i] = 1
+    mylist[i%len(mylist)].priority= mylist[i%len(mylist)].priority - 1
+    mylist[i%len(mylist)].teacher.tpriority = mylist[i%len(mylist)].teacher.tpriority - 1
+
+
+
+
+
+#WEDNESDAY
+
+
+
+for i in range(7):
+    for element in mylist:
+        if element.priority == 0:
+            mylist.remove(element)
+    wednesday.slots[i] = mylist[i%len(mylist)].name, mylist[i%len(mylist)].teacher.tname, mylist[i%len(mylist)].loc
+    mylist[i%len(mylist)].teacher.lectureslots[2][i] = 1
+    #print(monday.slots[i])
+    mylist[i%len(mylist)].priority= mylist[i%len(mylist)].priority - 1
+    mylist[i%len(mylist)].teacher.tpriority = mylist[i%len(mylist)].teacher.tpriority - 1
+
+
+
+
+
+
+#THURSDAY
+
+for i in range(7):
+    for element in mylist:
+        if element.priority == 0:
+            mylist.remove(element)
+    thursday.slots[i] = mylist[i%len(mylist)].name, mylist[i%len(mylist)].teacher.tname, mylist[i%len(mylist)].loc
+    mylist[i%len(mylist)].teacher.lectureslots[0][i] = 1
+
+    mylist[i%len(mylist)].priority= mylist[i%len(mylist)].priority - 1
+    mylist[i%len(mylist)].teacher.tpriority = mylist[i%len(mylist)].teacher.tpriority - 1
+
+
+#FRIDAY
+
+
+for i in range(7):
+    for element in mylist:
+        if element.priority == 0:
+            mylist.remove(element)
+
+    friday.slots[i] = mylist[i%len(mylist)].name, mylist[i%len(mylist)].teacher.tname, mylist[i%len(mylist)].loc
+    mylist[i%len(mylist)].teacher.lectureslots[4][i] = 1
+    #print(monday.slots[i])
+    mylist[i%len(mylist)].priority= mylist[i%len(mylist)].priority - 1
+    mylist[i%len(mylist)].teacher.tpriority = mylist[i%len(mylist)].teacher.tpriority - 1
+
+'''
+for slot in [friday.slots]:
+    count= 0
+
+    if count2 == 0:
+        print("FRI", end='\t')
+        count2=0
+    else:
+        pass
+    for slot2 in slot:
+        if count!=6:
+            print(slot2, end='\t')
+            count = count + 1
+        else:
+            print(slot2, end='\t')
+            print('\n')
+'''
+
+days_slots = [monday, tuesday, wednesday, thursday, friday]
+for slot in days_slots:
+    print(slot)
+
+
+
+
+
+def display_timetable():
+    count2 = 0
+    for slot in [monday.slots]:
+        count= 0
+        if count2 == 0:
+            print("Time", end='\t')
+            count2 = count2 + 1
+        elif count2 == 1:
+            print("MON", end='\t')
+            count2 = 0
+        else:
+            pass
+        for slot2 in slot:
+            if count!=6:
+                print(slot2, end='\t')
+                count = count + 1
+            else:
+                print(slot2, end='\t')
+                print('\n')
+
+    for slot in [tuesday.slots]:
+        count= 0
+
+        if count2 == 0:
+            print("TUE", end='\t')
+            count2 = 0
+        else:
+            pass
+        for slot2 in slot:
+            if count!=6:
+                print(slot2, end='\t')
+                count = count + 1
+            else:
+                print(slot2, end='\t')
+                print('\n')
+
+    for slot in [wednesday.slots]:
+        count= 0
+
+        if count2 == 0:
+            print("WED", end='\t')
+            count2=0
+        else:
+            pass
+        for slot2 in slot:
+            if count!=6:
+                print(slot2, end='\t')
+                count = count + 1
+            else:
+                print(slot2, end='\t')
+                print('\n')
+
+    for slot in [thursday.slots]:
+        count= 0
+
+        if count2 == 0:
+            print("THU", end='\t')
+            count2=0
+        else:
+            pass
+        for slot2 in slot:
+            if count!=6:
+                print(slot2, end='\t')
+                count = count + 1
+            else:
+                print(slot2, end='\t')
+                print('\n')
+
+    for slot in [friday.slots]:
+        count= 0
+
+        if count2 == 0:
+            print("FRI", end='\t')
+            count2=0
+        else:
+            pass
+        for slot2 in slot:
+            if count!=6:
+                print(slot2, end='\t')
+                count = count + 1
+            else:
+                print(slot2, end='\t')
+                print('\n')
+
+
+
+
+

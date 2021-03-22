@@ -1,0 +1,97 @@
+{% extends "index.html" %}
+{% block content %}
+<html>
+    <head> 
+        <!-------------------Important Links!------------------>         
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminreg.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminregEXTRA.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet" type="text/css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    </head>     
+    <body class="box loc"> 
+        <!-------------------Navigation Bar------------------>         
+        <div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Already a User? Login</a>
+                </li>
+            </ul>
+        </div>
+        <!-------------------Logo and Slogan------------------>         
+        <section id="banner">
+            <div class="container"> 
+                <div class="row"> 
+                    <div class="col-md-12"> 
+                        <h1 class="title">Registration</h1> 
+                    </div>                     
+                </div>                 
+            </div>
+        </section>         
+        <!-------registration form---->
+        <div class="regbox">
+            <form class="accform" action="/adminreg" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Institute</span>
+                        </div>
+                        <input type="text" name="institute" class="form-control" placeholder="Institute Name" aria-label="Username" aria-describedby="basic-addon1" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon2">Admin</span>
+                        </div>
+                        <input type="text" name="admin" class="form-control" placeholder="Admin Name" aria-label="Username" aria-describedby="basic-addon2" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">Email</span>
+                        </div>
+                        <input type="email" name="email" class="form-control" placeholder="Admin's Email" aria-label="Username" aria-describedby="basic-addon3" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon4">Password</span>
+                        </div>
+                        <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon4">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon5">Institute Address</span>
+                        </div>
+                        <textarea type="text" name="institute_address" class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon6">Phone</span>
+                        </div>
+                        <input type="phone" name="phone" class="form-control" placeholder="Number" aria-label="Username" aria-describedby="basic-addon6">
+                    </div>
+
+                    <div class="sub">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                      <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+                      {% if messages %}
+                        {% for category, message in messages %}
+                          <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <!-- <strong>Title</strong> --> {{ message }}
+                          </div>
+                        {% endfor %}
+                      {% endif %}
+                    {% endwith %}
+            </form>
+        </div>
+    </body>     
+</html>
+{% endblock content %}

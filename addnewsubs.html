@@ -1,0 +1,57 @@
+<html> 
+    <head> 
+        <!-------------------Important Links!------------------>         
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminreg.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminregEXTRA.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet" type="text/css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    </head>     
+    <body class="box loc"> 
+        <!-------------------Navigation Bar------------------>         
+        <div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/addnewsem">BACK</a>
+                </li>
+            </ul>
+        </div>
+        <!-------------------Logo and Slogan------------------>         
+        <section id="banner">
+            <div class="container"> 
+                <div class="row"> 
+                    <div class="col-md-12"> 
+                        <h1 class="title"> SEMESTER {{ sem }}</h1>
+                    </div>                     
+                </div>                 
+            </div>
+        </section>         
+        <!-------registration form---->
+        <div class="regbox">
+            <form class="accform" action="/addnewsubs" method="post">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">SUBJECT</span>
+                    </div>
+                    <input type="text" name="subject" class="form-control" placeholder="Enter the subject" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">SUBJECT LOAD HOURS</span>
+                    </div>
+                    <input type="text" name="load_hour" class="form-control" placeholder="Enter the subject's complete semester load hours" aria-label="Username" aria-describedby="basic-addon2">
+                </div>
+                <div class="input-group mb-3">
+                </div>
+                <div class="sub">
+                <button type="submit" class="btn btn-primary">
+                    <a href="/admindash" class="c">ADD NEW</a>
+                </button>
+                </div>
+            </form>
+        </div>
+    </body>     
+</html>

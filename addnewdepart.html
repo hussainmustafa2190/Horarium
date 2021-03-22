@@ -1,0 +1,84 @@
+<html> 
+    <head> 
+        <!-------------------Important Links!------------------>         
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminreg.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminregEXTRA.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet" type="text/css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    </head>     
+    <body class="box loc">
+
+        <!-------------------Navigation Bar------------------>         
+        <div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admindash">DASHBOARD</a>
+                </li>
+            </ul>
+        </div>
+        <!-------------------Logo and Slogan------------------>         
+        <section id="banner">
+            <div class="container">
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <h1 class="title">DEPARTMENT</h1>
+                    </div>                     
+                </div>                 
+            </div>
+        </section>         
+        <!-------registration form---->
+        <div class="regbox">
+            <form class="accform" action="/addnewdepart" method="post">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">DEPARTMENT</span>
+                    </div>
+                    <input type="text" name="department" class="form-control" placeholder="Enter the respective Department" aria-label="Username" aria-describedby="basic-addon1" required>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">SEMESTER</span>
+                    </div>
+                    <input type="text" name="semester" class="form-control" placeholder="Enter the respective Semester" aria-label="Username" aria-describedby="basic-addon2" required>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">START DAY</span>
+                    </div>
+                    <input type="date" name="start_day" class="form-control" placeholder="Enter the start date" aria-label="Username" aria-describedby="basic-addon3" required>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon4">END DAY</span>
+                    </div>
+                    <input type="date" name="end_day" class="form-control" placeholder="Enter the end date" aria-label="Username" aria-describedby="basic-addon4" required>
+                </div>
+
+{#                <div class="input-group mb-3">#}
+{#                </div>#}
+                <div class="sub c">
+
+                    <button type="submit" class="btn btn-primary c">ADD DEPARTMENT DETAILS
+                    </button>
+                    <button type="submit" class="btn btn-primary c">END DEPARTMENT
+                    </button>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                      <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+                      {% if messages %}
+                        {% for category, message in messages %}
+                          <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span></button>
+                          <!-- <strong>Title</strong> --> {{ message }}
+                          </div>
+                        {% endfor %}
+                      {% endif %}
+                    {% endwith %}
+                </div>
+            </form>
+        </div>
+    </body>     
+</html>

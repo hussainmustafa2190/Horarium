@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <!-------------------Important Links!------------------>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link  rel="stylesheet" type="text/css" href="{{ url_for('static', filename='trainerreg.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet" type="text/css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+        <link  rel="stylesheet" type="text/css" href="{{ url_for('static', filename='trainerreg.css') }}">
+    </head>
+    <body class="box loc">
+        <!-------------------Navigation Bar------------------>
+        <div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-------------------Logo and Slogan------------------>
+        <section id="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="title">Registration</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-------registration form---->
+        <div class="regbox">
+            <form class="accform" action="/trainerreg" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Name</span>
+                        </div>
+                        <input type="text" name="Tutor_Name" class="form-control" placeholder="Tutor Name" aria-label="Tutor_Name" aria-describedby="basic-addon1" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon2">ID</span>
+                        </div>
+                        <input type="number" name="Tutor_Id" class="form-control" placeholder="Tutor Id" aria-label="Tutor_Id" aria-describedby="basic-addon2" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">Email</span>
+                        </div>
+                        <input type="email" name="email" class="form-control" placeholder="Admin's Email" aria-label="Username" aria-describedby="basic-addon3" required>
+                    </div>
+                     <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon4">Password</span>
+                        </div>
+                        <input type="password" name="password" class="form-control" placeholder="Admin's Password" aria-label="Password" aria-describedby="basic-addon4" required>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon5">Phone</span>
+                        </div>
+                        <input type="phone" name="phone" class="form-control" placeholder="Number" aria-label="phone" aria-describedby="basic-addon5" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon6">Load Hour Of Teacher</span>
+                        </div>
+                        <input type="number" name="Load_hour" class="form-control" placeholder="Load_Hour" aria-label="Load_Hour" aria-describedby="basic-addon6" required>
+                    </div>
+
+                    <div class="sub">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                        {{ message }}
+                    </div>
+            </form>
+        </div>
+    </body>
+</html>

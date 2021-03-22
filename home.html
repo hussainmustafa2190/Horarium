@@ -1,0 +1,52 @@
+
+<html>
+    <head> 
+        <!-------------------Important Links!------------------>         
+        <title>Horarium</title>         
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    </head>     
+    <body class="picname"> 
+        <!-------------------Navigation Bar------------------>         
+        <div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQs</a>
+                </li>
+            </ul>
+        </div>
+        <!-------------------Logo and Slogan------------------>         
+        <section id="banner">
+            <div class="container"> 
+                <div class="row"> 
+                    <div class="col-md-12"> 
+                        <h1 class="title">Horarium</h1> 
+                        <p class="body">The Simple Way to Manage your Complex Timetables</p> 
+                    </div>                     
+                </div>                 
+            </div>
+        </section>         
+        <!-------------------Video------------------>         
+        <div> 
+            <iframe class="videocontainer" align="middle" width="560" height="315" src="https://www.youtube.com/embed/uDmgZlkOQ5w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>             
+        </div>         
+        <!-------------------Signup and others------------------>
+        <div class="signup">
+            <a href="/adminreg">Sign Up Now!</a>
+        </div>
+    </body>     
+</html>

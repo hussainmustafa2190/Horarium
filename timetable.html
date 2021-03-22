@@ -1,0 +1,105 @@
+<html>
+<body>
+<title>{{ title }}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminreg.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminregEXTRA.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet" type="text/css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+<table border=3>
+<tr>
+<th>Lectures</th>
+<th>Time</th>
+<th>MON</th>
+<th>TUE</th>
+<th>WED</th>
+<th>THU</th>
+<th>FRI</th>
+</tr>
+
+
+<tr>
+<td>1st</td>
+<td>9:00-10:00</td>
+<td>{{ posts[0].slots[0][0]+","+posts[0].slots[0][1]+","+posts[0].slots[0][2]}}</th>
+<td>{{ posts[1].slots[0][0]+","+posts[1].slots[0][1]+","+posts[1].slots[0][2]}}</th>
+<td>{{ posts[2].slots[0][0]+","+posts[2].slots[0][1]+","+posts[2].slots[0][2]}}</th>
+<td>{{ posts[3].slots[0][0]+","+posts[3].slots[0][1]+","+posts[3].slots[0][2]}}</th>
+<td>{{ posts[4].slots[0][0]+","+posts[4].slots[0][1]+","+posts[4].slots[0][2]}}</th>
+</tr>
+
+
+<tr>
+<td>2nd</td>
+<td> 10:00-11:00</td>
+<td>{{ posts[0].slots[1][0]+","+posts[0].slots[1][1]+","+posts[0].slots[1][2]}}</th>
+<td>{{ posts[1].slots[1][0]+","+posts[1].slots[1][1]+","+posts[1].slots[1][2]}}</th>
+<td>{{ posts[2].slots[1][0]+","+posts[2].slots[1][1]+","+posts[2].slots[1][2]}}</th>
+<td>{{ posts[3].slots[1][0]+","+posts[3].slots[1][1]+","+posts[3].slots[1][2]}}</th>
+<td>{{ posts[4].slots[1][0]+","+posts[4].slots[1][1]+","+posts[4].slots[1][2]}}</th>
+</tr>
+
+
+
+<tr>
+<td>3rd</td>
+<td>11:00-12:00</td>
+<td>{{ posts[0].slots[2][0]+","+posts[0].slots[2][1]+","+posts[0].slots[2][2]}}</th>
+<td>{{ posts[1].slots[2][0]+","+posts[1].slots[2][1]+","+posts[1].slots[2][2]}}</th>
+<td>{{ posts[2].slots[2][0]+","+posts[2].slots[2][1]+","+posts[2].slots[2][2]}}</th>
+<td>{{ posts[3].slots[2][0]+","+posts[3].slots[2][1]+","+posts[3].slots[2][2]}}</th>
+<td>{{ posts[4].slots[2][0]+","+posts[4].slots[2][1]+","+posts[4].slots[2][2]}}</th>
+</tr>
+
+
+<tr>
+<td>4th</td>
+<td>12:00-1:00</td>
+<td>{{ posts[0].slots[3][0]+","+posts[0].slots[3][1]+","+posts[0].slots[3][2]}}</th>
+<td>{{ posts[1].slots[3][0]+","+posts[1].slots[3][1]+","+posts[1].slots[3][2]}}</th>
+<td>{{ posts[2].slots[3][0]+","+posts[2].slots[3][1]+","+posts[2].slots[3][2]}}</th>
+<td>{{ posts[3].slots[3][0]+","+posts[3].slots[3][1]+","+posts[3].slots[3][2]}}</th>
+<td>{{ posts[4].slots[3][0]+","+posts[4].slots[3][1]+","+posts[4].slots[3][2]}}</th>
+</tr>
+
+
+<tr>
+<td>5th</td>
+<td>1:00-2:00</td>
+<td>{{ posts[0].slots[4][0]+","+posts[0].slots[4][1]+","+posts[0].slots[4][2]}}</th>
+<td>{{ posts[1].slots[4][0]+","+posts[1].slots[4][1]+","+posts[1].slots[4][2]}}</th>
+<td>{{ posts[2].slots[4][0]+","+posts[2].slots[4][1]+","+posts[2].slots[4][2]}}</th>
+<td>{{ posts[3].slots[4][0]+","+posts[3].slots[4][1]+","+posts[3].slots[4][2]}}</th>
+<td>{{ posts[4].slots[4][0]+","+posts[4].slots[4][1]+","+posts[4].slots[4][2]}}</th>
+</tr>
+
+
+<tr>
+<td>6th</td>
+<td>2:00-3:00</td>
+<td>{{ posts[0].slots[5][0]+","+posts[0].slots[5][1]+","+posts[0].slots[5][2]}}</th>
+<td>{{ posts[1].slots[5][0]+","+posts[1].slots[5][1]+","+posts[1].slots[5][2]}}</th>
+<td>{{ posts[2].slots[5][0]+","+posts[2].slots[5][1]+","+posts[2].slots[5][2]}}</th>
+<td>{{ posts[3].slots[5][0]+","+posts[3].slots[5][1]+","+posts[3].slots[5][2]}}</th>
+<td>{{ posts[4].slots[5][0]+","+posts[4].slots[5][1]+","+posts[4].slots[5][2]}}</th>
+</tr>
+
+
+<tr>
+<td>7th</td>
+<td>3:00-4:00</td>
+<td>{{ posts[0].slots[6][0]+","+posts[0].slots[6][1]+","+posts[0].slots[6][2]}}</th>
+<td>{{ posts[1].slots[6][0]+","+posts[1].slots[6][1]+","+posts[1].slots[6][2]}}</th>
+<td>{{ posts[2].slots[6][0]+","+posts[2].slots[6][1]+","+posts[2].slots[6][2]}}</th>
+<td>{{ posts[3].slots[6][0]+","+posts[3].slots[6][1]+","+posts[3].slots[6][2]}}</th>
+<td>{{ posts[4].slots[6][0]+","+posts[4].slots[6][1]+","+posts[4].slots[6][2]}}</th>
+
+</tr>
+
+
+
+</table>
+</body>
+</html>

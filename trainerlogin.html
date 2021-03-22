@@ -1,0 +1,35 @@
+
+<html>
+    <head> 
+        <!-------------------Important Links!------------------>         
+        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet"> 
+        <title>Horarium</title>         
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminlogin.css') }}">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>         
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>         
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminlogin.css') }}">
+    </head>     
+    <body class="username usernametext accblock password passwordtext sbutton picname"> 
+        <!-------------------Logo and Greetings------------------>         
+        <div class="loginarea"> 
+            <h1 class="title2">Horarium</h1> 
+                <form class="accform" action="/trainerlogin" method="post">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Trainer ID</label>
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your information with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember Me!</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+        </div>
+    </body>
+</html>

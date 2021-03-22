@@ -1,0 +1,61 @@
+<html> 
+    <head> 
+        <!-------------------Important Links!------------------>         
+        <title>{{ title }} Dashboard</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admindash.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet" type="text/css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    </head>     
+    <body class="box"> 
+        <!-------------------Navigation Bar------------------>         
+        <div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/addnewdepart">Departments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/bldgdetails">Infrastructure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/timetable">Timetable Generation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/trainerreg">Trainers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Log Out</a>
+                </li>
+            </ul>
+        </div>
+        <!-------------------Logo and Slogan------------------>         
+
+        <section id="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="title">Dashboard</h1>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+                      <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+                      {% if messages %}
+                        {% for category, message in messages %}
+                          <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <!-- <strong>Title</strong> --> {{ message }}
+                          </div>
+                        {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </body>     
+</html>

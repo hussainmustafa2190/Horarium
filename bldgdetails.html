@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <!-------------------Important Links!------------------>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="adminreg.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet" type="text/css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+        <link  rel="stylesheet" type="text/css" href="{{ url_for('static', filename='adminreg.css') }}">
+    </head>
+    <body class="box loc">
+        <!-------------------Navigation Bar------------------>
+        <div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admindash">Back</a>
+                </li>
+            </ul>
+        </div>
+        <!-------------------Logo and Slogan------------------>
+        <section id="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="title">Infrastructure</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-------registration form---->
+        <div class="regbox">
+            <form class="accform" action="/bldgdetails" method="POST">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Building Name </span>
+                    </div>
+                    <input type="text" name="building_name" class="form-control" placeholder="Building Name" aria-label="Username" aria-describedby="basic-addon1" required>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">Building Number</span>
+                    </div>
+                    <input type="number" name="building_number" class="form-control" placeholder="Building Number" aria-label="Username" aria-describedby="basic-addon2" required>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">No of floors</span>
+                    </div>
+                    <input type="number" name="number_of_floors" class="form-control" placeholder="Number Of Floors" aria-label="Username" aria-describedby="basic-addon3" required>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon4">No. of Labs</span>
+                    </div>
+                    <input type="number" name="number_of_labs" class="form-control" placeholder="Number Of Labs" aria-label="Username" aria-describedby="basic-addon4">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon5">No. of Classrooms</span>
+                    </div>
+                    <input type="number" name="number_of_class" class="form-control" placeholder="Number Of Classrooms" aria-label="Username" aria-describedby="basic-addon5" required>
+                </div>
+                <div class="input-group mb-3">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                </div>
+                </div>
+                <div class="input-group mb-3">
+                </div>
+
+                 <div class="sub">
+                    <button type="submit" class="btn btn-primary">
+                        <a href="/admindash "> ADD </a>
+                    </button>
+                 </div>
+            </form>
+        </div>
+
+    </body>
+</html>
